@@ -1,0 +1,134 @@
+:root{
+    --color1:#000
+    --color2:#fff;
+    --purple:#814096;
+    --pink:#F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+body{
+    margin :0;
+    padding :0;
+    background: white;
+}
+
+.heading{
+    color:var(--color1);
+    text-align: center;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font: bolder;
+    margin: auto;
+}
+
+.control-label{
+    color:var(--color1);
+}
+
+.control_board{
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    padding: 5% 5% 0;
+}
+
+.form-group{
+    margin:10px;
+    margin: auto;
+}
+
+#chart {
+    height: 70vh;
+    width: 70%;
+    margin: auto;
+}
+
+.dropdown-content a{
+   display: block;
+   width: inherit;  
+   color: var(--color1);
+   /* background-color: var(--color2); */
+   text-decoration: none;
+}
+
+.dropdown-content a:hover{
+    color: var(--color2);
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    z-index:1;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+header{
+    top:0; left:0;
+    width:100%;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 2.5rem;
+    margin: auto;
+    color:var(--purple);
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+.btn{
+    display: block;
+    margin: auto;
+    padding:.5rem 2rem;
+    border-radius: 5rem;
+    background:var(--gradient);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    color:#fff;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.myChartClass {
+    width: 70% !important;
+    height: 66vh !important;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+
+
+/* header .logo{
+    font-size: 2.5rem;
+    color:var(--purple);
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+header .navbar a{
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    font-size: 20px;
+    color:var(--purple);
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+} */

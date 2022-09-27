@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+        integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Currency Converter Dashboard</title>
+
+</head>
+
+<body>
+    
+
+    <header>
+        <a class="logo"><span>Currency </span>Converter</a>
+
+        <!-- <nav class="navbar">
+            <a href="#Currency_Converter">home</a>
+            <a href="#realtime">Real Time</a>
+            <a href="#contact">Converter</a>
+        </nav> -->
+    </header>
+
+<div class="control_board col-sm-8">
+    
+<form onsubmit="change_the_graph(event)" >
+    <div class="form-inline mb-5 ml-5 mr-5 mt-5">       
+        <div class="form-group">
+            <div class="DropDown">
+                   <div class="input-group">
+                    <input type="text" placeholder="Currency 1" id="Input" onkeyup="filterfunction()" onclick="showdropdown()" class="from-control mt-4 ml-4 mr-4" autocomplete="off">
+                   </div>
+                   <div id="myDropdown" class="dropdown-content mr-4 ml-4">
+                    <a value="USD" onclick="changeinput(event)">USD</a>
+                </div>
+            </div>
+              
+        </div>
+        
+        <div class="form-group">
+            <div class="DropDown">
+                <div class="input-group">
+                 <input type="text" placeholder="Currency 2" id="Input2" onkeyup="filterfunction2()" onclick="showdropdown2()" class="from-control mt-4 ml-4 mr-4" autocomplete="off">
+                </div>
+                <div id="myDropdown2" class="dropdown-content mr-4 ml-4">
+                    <!-- <a value="USD" onclick="changeinput2(event)">USD</a>
+                    <a value="INR" onclick="changeinput2(event)">INR</a>
+                    <a value="about" onclick="changeinput2(event)">About</a>
+                    <a value="Base" onclick="changeinput2(event)">Base</a>
+                    <a value="blog" onclick="changeinput2(event)">Blog</a>
+                    <a value="contact" onclick="changeinput2(event)">Contact</a>
+                    <a value="custom" onclick="changeinput2(event)">Custom</a>
+                    <a value="support" onclick="changeinput2(event)">Support</a>
+                    <a value="tools" onclick="changeinput2(event)">Tools</a> -->
+                </div>
+         </div>
+        </div>
+    </div>
+        
+    <div class="form-inline mb-5 ml-5 mr-5 mt-5">
+
+        <div class="form-group">
+            <label for="Year" class="control-label m-4"> YEAR </label>
+                <select name="" id="Year" class="form-control">
+                    <option selected value> Year </option>
+                    <option value="">2012</option>
+                    <option value="">2013</option>
+                    <option value="">2014</option>
+                    <option value="">2015</option>
+                    <option value="">2016</option>
+                    <option value="">2017</option>
+                    <option value="">2018</option>
+                    <option value="">2019</option>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                    <!-- <option value="">2023</option> -->
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Month" class="control-label m-4"> MONTH </label>
+                <select name="" id="Month" class="form-control">
+                    <option selected alue>Month</option>
+                    <option value=0>January</option>
+                    <option value=1>Febuary</option>
+                    <option value=2>March</option>
+                    <option value=3>April</option>
+                    <option value=4>May</option>
+                    <option value=5>June</option>
+                    <option value=6>July</option>
+                    <option value=7>August</option>
+                    <option value=8>September</option>
+                    <option value=9>October</option>
+                    <option value=10>November</option>
+                    <option value=11>December</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Date" class="control-label m-4">DATE </label>
+                <select name="" id="Date" class="form-control">
+                    <option selected value>Date</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>6</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                    <option value=12>12</option>
+                    <option value=12>13</option>
+                    <option value=12>14</option>
+                    <option value=12>15</option>
+                    <option value=12>16</option>
+                    <option value=12>17</option>
+                    <option value=12>18</option>
+                    <option value=12>19</option>
+                    <option value=12>20</option>
+                    <option value=12>21</option>
+                    <option value=12>22</option>
+                    <option value=12>23</option>
+                    <option value=12>24</option>
+                    <option value=12>25</option>
+                    <option value=12>26</option>
+                    <option value=12>27</option>
+                    <option value=12>28</option>
+                    <option value=12>29</option>
+                    <option value=12>30</option>
+                    <option value=12>31</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Quater" class="control-label m-4">QUATER </label>
+                <select name="" id="Quater" class="form-control">
+                    <option selected value>Quater</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Week" class="control-label m-4">WEEK </label>
+                <select name="" id="Week" class="form-control">
+                    <option selected value>Week</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                </select>
+        </div>
+
+    </div>
+        </div>
+        </div>
+      <button class="btn" type="submit">SUBMIT</button>
+</form>
+</div>
+
+
+    
+<div class="chart CurrGraph">
+    <canvas class="myChartClass" id="myChart"></canvas>
+  </div>
+
+  <div>
+    <table class="table table-sm table-dark">        
+        <tbody>
+            <tr class="table-success">
+                <td>High Value</td>
+                <td id="high_value"></td>
+            </tr>
+            <tr class="table-danger">
+                <td>Low Value</td>
+                <td id="low_value"></td>
+            </tr>            
+        </tbody>
+      </table>
+  </div>
+  <script src="app.js"></script>
+</body>    
+</html>
